@@ -62,7 +62,13 @@ def filtrar_dia(datos, dia):
     
     # TODO: Escriba su código aquí
     # ---------------------------------------------
-
+    datos_f = []
+    datos_f.append(datos[0])
+    for fila in datos[1:]:
+        if dia in fila:
+            datos_f.append(fila)
+             
+    return datos_f
     # ---------------------------------------------
     
     return []  # reemplace la lista vacía [] por el resultado de su código
@@ -77,7 +83,14 @@ def estadisticas_dia(datos, dia):
     
     # TODO: Escriba su código aquí
     # ---------------------------------------------
-
+    cabecera_ts = []
+    cabecera_ts = filtrar_dia(datos,dia)
+    datos_f1 = filtrar_cabecera(cabecera_ts, 'ts')
+    datos_f1.remove('ts')
+    tmax = max(datos_f1)
+    tmin = min(datos_f1)
+    tmedia = round(sum(datos_f1)/len(datos_f1),1)
+    
     # ---------------------------------------------
     # Su código termina aquí, luego se retornan los datos calculados
     
